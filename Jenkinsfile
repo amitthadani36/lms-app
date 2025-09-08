@@ -10,8 +10,7 @@ pipeline {
         }
         stage('Build LMS') {
             steps {
-                sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
-                sh '\. "$HOME/.nvm/nvm.sh"'
+                sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && \. "$HOME/.nvm/nvm.sh"'
                 sh 'nvm install 22'
                 sh 'node -v'
                 sh 'nvm current'
