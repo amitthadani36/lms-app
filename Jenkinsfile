@@ -14,7 +14,7 @@ pipeline {
                 sh 'nvm install 22'
                 sh 'node -v'
                 sh 'nvm current'
-                sh 'npm -v''
+                sh 'npm -v'
                 sh 'cd webapp && npm install && npm run build'
                 echo 'LMS build complete'
             }
