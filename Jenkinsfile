@@ -10,7 +10,12 @@ pipeline {
         }
         stage('Build LMS') {
             steps {
-                sh 'sudo apt install node:17'
+                sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+                sh '\. "$HOME/.nvm/nvm.sh"'
+                sh 'nvm install 22'
+                sh 'node -v'
+                sh 'nvm current'
+                sh 'npm -v''
                 sh 'cd webapp && npm install && npm run build'
                 echo 'LMS build complete'
             }
