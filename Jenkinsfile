@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Build LMS') {
             steps {
+                sh 'sudo apt install node:17'
                 sh 'cd webapp && npm install && npm run build'
                 echo 'LMS build complete'
             }
